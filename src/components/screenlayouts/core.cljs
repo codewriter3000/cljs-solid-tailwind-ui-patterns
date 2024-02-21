@@ -3,7 +3,7 @@
     [components.navigation.core :refer [topbar leftbar content footer]]
     [solid.core :as s :refer [$ defui children]]))
 
-(defui top-left-layout [{:keys [leftbar-items company-logo children]}]
+(defui top-left-screen-layout [{:keys [leftbar-items company-logo children]}]
        ($ :div {:class "flex flex-col h-dvh"}
            ($ topbar {:company-logo company-logo})
            ($ :div {:class "flex flex-row grow"}
@@ -12,7 +12,7 @@
                  children))
           ))
 
-(defui top-left-footer-layout [{:keys [leftbar-items company-logo children footer-body]}]
+(defui top-left-footer-screen-layout [{:keys [leftbar-items company-logo children footer-body]}]
        ($ :div {:class "flex flex-col h-dvh"}
            ($ topbar {:company-logo
                  ($ :img {:src "img/company-logo.svg" :height 69 :width 120})})
@@ -23,13 +23,13 @@
            ($ footer footer-body)
           ))
 
-(defui left-layout [{:keys [leftbar-items children]}]
+(defui left-screen-layout [{:keys [leftbar-items children]}]
        ($ :div {:class "flex flex-row"}
           ($ leftbar {:class "basis-1/4" :items leftbar-items})
           ($ content {:class "basis-3/4"}
              children)))
 
-(defui top-layout [{:keys [company-logo children]}]
+(defui top-screen-layout [{:keys [company-logo children]}]
        ($ :div {:class "flex flex-col"}
            ($ topbar {:company-logo
                  company-logo})
@@ -37,7 +37,7 @@
               children)
           ))
 
-(defui top-footer-layout [{:keys [company-logo children footer-body]}]
+(defui top-footer-screen-layout [{:keys [company-logo children footer-body]}]
        ($ :div {:class "flex flex-col"}
            ($ topbar {:company-logo
                  company-logo})
@@ -46,13 +46,13 @@
            ($ footer footer-body)
           ))
 
-(defui content-footer-layout [{:keys [children footer-body]}]
+(defui content-footer-screen-layout [{:keys [children footer-body]}]
        ($ :div {:class "flex flex-col"}
            ($ content {:class "basis-full"}
               children)
            ($ footer footer-body)
           ))
 
-(defui content-only-layout [children]
+(defui content-only-screen-layout [children]
        ($ content {:class "h-dvh"}
           children))
