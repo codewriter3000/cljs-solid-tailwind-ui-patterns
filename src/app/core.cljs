@@ -3,6 +3,7 @@
     [components.screenlayouts.core :refer [top-left-screen-layout]]
     [components.groupedlayouts.core :refer [tab-control-grouped-layout]]
     [components.formcontrols.core :refer [textbox]]
+    [metas.skins.core :refer [skin]]
     [clojure.string :as str]
     [solid.core :as s :refer [$ defui]]))
 
@@ -11,6 +12,8 @@
                            :leftbar-items [["Home" "/"]]
                            :footer-body "Hi"}
           ($ textbox {:label "FirstName"})
+          (skin "colors:
+  primary: #0043ce")
 ;;          (let [active-tab (s/signal 0)])
 ;;          ($ tab-control-grouped-layout)
 ;;          ($ tab)
